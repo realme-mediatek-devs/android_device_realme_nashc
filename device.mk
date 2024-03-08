@@ -48,6 +48,7 @@ PRODUCT_PACKAGES += \
     libhapticgenerator
 
 PRODUCT_PACKAGES += \
+    BesLoudness \
     MtkInCallService
 
 PRODUCT_COPY_FILES += \
@@ -101,6 +102,10 @@ PRODUCT_PACKAGES += \
 # Doze
 PRODUCT_PACKAGES += \
     OplusDoze
+
+# PowerOffAlarm
+PRODUCT_PACKAGES += \
+    PowerOffAlarm
 
 # DRM
 PRODUCT_PACKAGES += \

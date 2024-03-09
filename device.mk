@@ -269,7 +269,8 @@ PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
 PRODUCT_PACKAGES += \
     WifiOverlay \
     TetheringConfigOverlay \
-    CarrierConfigOverlay
+    CarrierConfigOverlay \
+    DozeOverlaySystem
 
 # Permissions
 PRODUCT_COPY_FILES += \

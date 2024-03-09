@@ -15,3 +15,6 @@ vendor.debug.tpi.                  u:object_r:vendor_oplus_prop:s0
 
 # NFC
 ro.vendor.device.variant           u:object_r:vendor_variant_prop:s0
+
+# PQ
+ro.vendor.mtk_hdr_video_support         u:object_r:vendor_mtk_pq_ro_prop:s0

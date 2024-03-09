@@ -270,7 +270,8 @@ PRODUCT_PACKAGES += \
     WifiOverlay \
     TetheringConfigOverlay \
     CarrierConfigOverlay \
-    DozeOverlaySystem
+    DozeOverlaySystem \
+    DozeOverlaySystemUI
 
 # Permissions
 PRODUCT_COPY_FILES += \

@@ -272,7 +272,8 @@ PRODUCT_PACKAGES += \
     CarrierConfigOverlay \
     DozeOverlaySystem \
     DozeOverlaySystemUI \
-    OplusDozeOverlay
+    OplusDozeOverlay \
+    OPlusSettingsResTarget
 
 # Permissions
 PRODUCT_COPY_FILES += \

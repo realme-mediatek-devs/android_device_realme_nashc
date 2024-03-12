@@ -320,19 +320,13 @@ PRODUCT_COPY_FILES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power-service-mediatek \
+    android.hardware.power-service.mediatek-libperfmgr \
     android.hardware.power-V2-ndk.vendor \
-    android.hardware.power@1.0.vendor \
-    android.hardware.power@1.1.vendor \
     android.hardware.power@1.2.vendor \
-    vendor.mediatek.hardware.mtkpower@1.0.vendor \
-    vendor.mediatek.hardware.mtkpower@1.1.vendor \
+    libmtkperf_client_vendor \
+    libmtkperf_client \
+    vendor.mediatek.hardware.mtkpower@1.2-service.stub \
     vendor.mediatek.hardware.mtkpower@1.2.vendor
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/perf/power_app_cfg.xml:$(TARGET_COPY_OUT_VENDOR)/etc/power_app_cfg.xml \
-    $(LOCAL_PATH)/configs/perf/powercontable.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powercontable.xml \
-    $(LOCAL_PATH)/configs/perf/powerscntbl.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerscntbl.xml
 
 # Public libraries
 PRODUCT_COPY_FILES += \
@@ -360,10 +354,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fstab.mt6785 \
     fstab.mt6785_ramdisk \
-    init.cgroup.rc \
     init.connectivity.rc \
     init.modem.rc \
     init.mt6785.rc \
+    init.mt6785.power.rc \
     init.mt6785.usb.rc \
     init.nfc_detect.rc \
     init.project.rc \

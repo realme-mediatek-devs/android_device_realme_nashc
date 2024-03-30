@@ -430,6 +430,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.wifi-service-lazy \
     wpa_supplicant \
+    libwifi-hal-wrapper \
     hostapd
 
 # Tetheroffload

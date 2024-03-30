@@ -1,0 +1,25 @@
+//
+// Copyright (C) 2022 The LineageOS Project
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+
+cc_library {
+    name: "libcamera_metadata_shim_nashc",
+    shared_libs: ["libcamera_metadata"],
+    srcs: ["libcamera/camera_metadata.cpp"],
+    vendor: true
+}
+
+cc_library_shared {
+    name: "libshim_sensors",
+    whole_static_libs: [
+        "android.hardware.sensors@1.0-convert"
+    ],
+    shared_libs: [
+        "libhardware",
+        "libhidlbase",
+        "android.hardware.sensors@1.0"
+    ],
+    vendor: true
+}

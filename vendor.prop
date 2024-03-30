@@ -8,6 +8,9 @@ ro.vendor.aee.convert64=0
 # ADB
 persist.adb.nonblocking_ffs=0
 
+# APK Verity
+ro.apk_verity.mode=2
+
 # Audio
 aaudio.mmap_policy=2
 aaudio.mmap_exclusive_policy=2

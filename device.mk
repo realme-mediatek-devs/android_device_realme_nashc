@@ -319,8 +319,9 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml
 
 # Power
+$(call inherit-product, hardware/oplus/power-libperfmgr/power-libperfmgr.mk)
+
 PRODUCT_PACKAGES += \
-    android.hardware.power-service.mediatek-libperfmgr \
     android.hardware.power-V2-ndk.vendor \
     android.hardware.power@1.2.vendor \
     libmtkperf_client_vendor \

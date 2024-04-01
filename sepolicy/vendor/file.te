@@ -25,11 +25,17 @@ type factorytestreport_vendor_data_file, data_file_type, file_type;
 type oplus_fingerprint_file, data_file_type, file_type;
 type vendor_proc_fingerprint, fs_type, proc_type;
 
+# Latency
+type latency_device, dev_type;
+
 # NFC
 type vendor_proc_nfc_chipset, fs_type, proc_type;
 
 # OTG
 type vendor_sysfs_otg_switch, fs_type, sysfs_type;
+
+# PPS
+type pps_socket, file_type;
 
 # Sensors
 type vendor_proc_oplus_sensor_feature, fs_type, proc_type;
@@ -46,3 +52,5 @@ type vendor_proc_oplus_version, fs_type, proc_type;
 # Performance
 type proc_sched_stune, fs_type, proc_type;
 type proc_sched_assist, fs_type, proc_type;
+type sysfs_mtk_cpufreq, fs_type, sysfs_type;
+type sysfs_mtk_gpufreq, fs_type, sysfs_type;

@@ -257,7 +257,8 @@ PRODUCT_COPY_FILES += \
 
 # USB
 PRODUCT_PACKAGES += \
-    android.hardware.usb-service.mediatek
+    android.hardware.usb-service.mediatek \
+    android.hardware.usb.gadget-service.mediatek
 
 # Overlays
 PRODUCT_ENFORCE_RRO_TARGETS := *

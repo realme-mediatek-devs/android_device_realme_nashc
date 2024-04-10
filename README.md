@@ -16,7 +16,7 @@ The Realme  8 (codenamed "nashc") is a mid-budget smartphone from Realme.
 | SoC                     | MediaTek Helio G95 (MT6785V/CD) (12nm)                                       |
 | CPU                     | 2x 2.05 GHz ARM Cortex-A76, 6x 2.0 GHz ARM Cortex-A55                        |                    
 | GPU                     | Mali-G76 MC4                                                                 |
-| Memory                  | 4GB / 6GB                                                                    |
+| Memory                  | 4GB / 6GB / 8GB                                                                   |
 | Shipped Android version | 11                                                                           |
 | Storage                 | 128GB (UFS 2.1)                                                              |
 | Battery                 | Non-removable Li-Po 5000 mAh                                                 |

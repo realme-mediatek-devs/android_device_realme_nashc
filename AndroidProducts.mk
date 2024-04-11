@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/derp_nashc.mk
+    $(LOCAL_DIR)/evolution_nashc.mk
 
 COMMON_LUNCH_CHOICES := \
-    derp_nashc-user \
-    derp_nashc-userdebug \
-    derp_nashc-eng
+    evolution_nashc-user \
+    evolution_nashc-userdebug \
+    evolution_nashc-eng

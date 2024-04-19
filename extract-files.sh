@@ -82,6 +82,9 @@ function blob_fixup {
         vendor/bin/hw/android.hardware.media.c2@1.2-mediatek-64b)
            "$PATCHELF" --replace-needed "libavservices_minijail_vendor.so" "libavservices_minijail.so" "$2"
             ;;
+        system_ext/lib64/libsink.so)
+            "${PATCHELF}" --add-needed "libshim_sink.so" "$2"
+            ;;
     esac
 }
 

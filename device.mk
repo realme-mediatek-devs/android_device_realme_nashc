@@ -35,9 +35,11 @@ PRODUCT_PACKAGES += \
     android.hardware.audio@6.0-util.vendor \
     android.hardware.audio@7.0-util.vendor \
     android.hardware.audio@7.0.vendor \
+    android.hardware.soundtrigger@2.3-impl:32 \
     audio.bluetooth.default \
     libaudiofoundation.vendor \
     libbluetooth_audio_session \
+    libalsautils \
     libnbaio_mono \
     libtinycompress \
     libdynproc \
@@ -211,7 +213,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libcodec2_hidl@1.1.vendor \
     libcodec2_hidl@1.2.vendor \
-    libavservices_minijail_vendor \
+    libavservices_minijail.vendor \
     libstagefright_softomx_plugin.vendor \
     libsfplugin_ccodec_utils.vendor \
     libcodec2_soft_common.vendor
@@ -256,8 +258,7 @@ PRODUCT_COPY_FILES += \
 
 # USB
 PRODUCT_PACKAGES += \
-    android.hardware.usb-service.mediatek \
-    android.hardware.usb.gadget-service.mediatek
+    android.hardware.usb@1.3-service-mediatekv2
 
 # Overlays
 PRODUCT_ENFORCE_RRO_TARGETS := *
@@ -319,18 +320,20 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml
 
 # Power
-$(call inherit-product, hardware/oplus/power-libperfmgr/power-libperfmgr.mk)
-
 PRODUCT_PACKAGES += \
+    android.hardware.power-service-mediatek \
     android.hardware.power-V2-ndk.vendor \
+    android.hardware.power@1.0.vendor \
+    android.hardware.power@1.1.vendor \
     android.hardware.power@1.2.vendor \
-    libmtkperf_client_vendor \
-    libmtkperf_client \
-    vendor.mediatek.hardware.mtkpower@1.2-service.stub \
+    vendor.mediatek.hardware.mtkpower@1.0.vendor \
+    vendor.mediatek.hardware.mtkpower@1.1.vendor \
     vendor.mediatek.hardware.mtkpower@1.2.vendor
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
+    $(LOCAL_PATH)/configs/perf/power_app_cfg.xml:$(TARGET_COPY_OUT_VENDOR)/etc/power_app_cfg.xml \
+    $(LOCAL_PATH)/configs/perf/powercontable.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powercontable.xml \
+    $(LOCAL_PATH)/configs/perf/powerscntbl.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerscntbl.xml
 
 # Public libraries
 PRODUCT_COPY_FILES += \
@@ -358,10 +361,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fstab.mt6785 \
     fstab.mt6785_ramdisk \
+    init.cgroup.rc \
     init.connectivity.rc \
     init.modem.rc \
     init.mt6785.rc \
-    init.mt6785.power.rc \
     init.mt6785.usb.rc \
     init.nfc_detect.rc \
     init.project.rc \
@@ -405,17 +408,13 @@ PRODUCT_SHIPPING_API_LEVEL := 30
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
-    hardware/google/interfaces \
-    hardware/google/pixel \
     hardware/mediatek \
     hardware/oplus
 
 # Thermal
 PRODUCT_PACKAGES += \
-    android.hardware.thermal-service.mediatek
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/thermal_info_config.json:$(TARGET_COPY_OUT_VENDOR)/etc/thermal_info_config.json
+    android.hardware.thermal@2.0.vendor \
+    android.hardware.thermal@1.0-impl
 
 # Touch
 PRODUCT_PACKAGES += \

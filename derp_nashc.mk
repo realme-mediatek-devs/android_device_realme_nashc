@@ -12,25 +12,17 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/non_ab_device.mk)
 # Inherit from device makefile.
 $(call inherit-product, device/realme/nashc/device.mk)
 
-# Inherit some common RisingOS stuff.
-$(call inherit-product, vendor/rising/config/rising.mk)
+# Inherit some common LineageOS stuff.
+$(call inherit-product, vendor/derp/config/common_full_phone.mk)
 
 # Bootanimation
 TARGET_BOOT_ANIMATION_RES := 1080
 
-# Gapps Config
-WITH_GMS := true
-TARGET_CORE_GMS := true
-TARGET_GAPPS_ARCH := arm64
-TARGET_ENABLE_BLUR := true
-TARGET_ENABLE_PIXEL_FEATURES := true
+TARGET_USES_MINI_GAPPS := true
 TARGET_SUPPORTS_QUICK_TAP := true
-TARGET_HAS_UDFPS := true
+EXTRA_UDFPS_ICONS := true
 
-RISING_MAINTAINER := "Fastle"
-RISING_CHIPSET := "MT6785"
-
-PRODUCT_NAME := rising_nashc
+PRODUCT_NAME := derp_nashc
 PRODUCT_DEVICE := nashc
 PRODUCT_MANUFACTURER := Realme
 PRODUCT_BRAND := Realme

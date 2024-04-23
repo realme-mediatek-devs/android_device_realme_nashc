@@ -13,9 +13,15 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/non_ab_device.mk)
 $(call inherit-product, device/realme/nashc/device.mk)
 
 # Inherit some common LineageOS stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+$(call inherit-product, vendor/derp/config/common_full_phone.mk)
 
-PRODUCT_NAME := lineage_nashc
+# Inherit some common DerpFest stuff
+TARGET_BOOT_ANIMATION_RES := 1080
+TARGET_USES_MINI_GAPPS := true
+TARGET_SUPPORTS_QUICK_TAP := true
+EXTRA_UDFPS_ICONS := true
+
+PRODUCT_NAME := derp_nashc
 PRODUCT_DEVICE := nashc
 PRODUCT_MANUFACTURER := Realme
 PRODUCT_BRAND := Realme

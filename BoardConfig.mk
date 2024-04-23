@@ -13,6 +13,9 @@ BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 # APEX
 DEXPREOPT_GENERATE_APEX_IMAGE := true
 
+# FIXME: Dexpreopt, a little too big
+WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := true
+
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-2a-dotprod
@@ -70,6 +73,7 @@ TARGET_KERNEL_CONFIG := lineage-nashc_defconfig
 TARGET_KERNEL_CLANG_COMPILE := true
 BOARD_INCLUDE_RECOVERY_DTBO := true
 BOARD_KERNEL_SEPARATED_DTBO := true
+BOARD_KERNEL_CMDLINE += kpti=off
 BOARD_KERNEL_IMAGE_NAME := Image.gz
 
 # Partitions
@@ -120,9 +124,6 @@ TARGET_HEALTH_CHARGING_CONTROL_CHARGING_PATH := /sys/class/oplus_chg/battery/mmi
 # Platform
 TARGET_BOARD_PLATFORM := mt6785
 BOARD_HAS_MTK_HARDWARE := true
-
-# Power
-TARGET_TAP_TO_WAKE_NODE := "/proc/touchpanel/double_tap_enable"
 
 # Properties
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
@@ -183,7 +184,7 @@ DEVICE_MATRIX_FILE += $(DEVICE_PATH)/compatibility_matrix.xml
 ODM_MANIFEST_FILES := $(DEVICE_PATH)/manifest_odm.xml
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
     $(DEVICE_PATH)/framework_compatibility_matrix.xml \
-    vendor/lineage/config/device_framework_matrix.xml
+    vendor/derp/config/device_framework_matrix.xml
 
 DEVICE_MANIFEST_SKUS += nfc
 DEVICE_MANIFEST_NFC_FILES := $(DEVICE_PATH)/manifest_nfc.xml

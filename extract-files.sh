@@ -55,6 +55,7 @@ function blob_fixup {
             grep -q "libcamera_metadata_shim_nashc.so" "${2}" || "${PATCHELF}" --add-needed "libcamera_metadata_shim_nashc.so" "${2}"
             ;;
         vendor/bin/mnld|\
+        vendor/lib64/hw/android.hardware.sensors@2.X-subhal-mediatek.so|\
         vendor/lib*/libcam.utils.sensorprovider.so|\
         vendor/lib*/libaalservice.so)
             "$PATCHELF" --add-needed "libshim_sensors.so" "$2"

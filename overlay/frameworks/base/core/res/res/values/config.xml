@@ -377,6 +377,9 @@
     <!-- Expected value from fast charging status file  -->
     <string name="config_oemFastChargerStatusValue" translatable="false">1</string>
 
+    <!-- Whether device has Dash charging support -->
+    <bool name="config_hasDashCharger">true</bool>
+
     <!-- Boolean indicating whether the HWC setColorTransform function can be performed efficiently
          in hardware. -->
     <bool name="config_setColorTransformAccelerated">true</bool>

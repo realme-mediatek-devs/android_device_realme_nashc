@@ -7,7 +7,6 @@ import /vendor/etc/init/hw/init.sensor_1_0.rc
 import /vendor/etc/init/hw/init.modem.rc
 
 on early-init
-    write /sys/devices/platform/10012000.dvfsrc/helio-dvfsrc/dvfsrc_req_ddr_opp -1
     write /proc/sys/kernel/firmware_config/force_sysfs_fallback 1
 
 on init

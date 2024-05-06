@@ -78,7 +78,6 @@ ro.vendor.pq.mtk_blulight_def_support=1
 ro.hardware.egl=meow
 debug.renderengine.backend=skiaglthreaded
 debug.hwui.skia_atrace_enabled=false
-ro.hwui.render_ahead=10
 
 # SurfaceFlinger
 ro.surface_flinger.primary_display_orientation=ORIENTATION_0

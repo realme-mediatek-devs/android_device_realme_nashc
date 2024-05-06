@@ -38,6 +38,7 @@ PRODUCT_PACKAGES += \
     audio.bluetooth.default \
     libaudiofoundation.vendor \
     libbluetooth_audio_session \
+    libalsautils \
     libnbaio_mono \
     libtinycompress \
     libdynproc \
@@ -118,7 +119,7 @@ PRODUCT_PACKAGES += \
 # Cgroup
 PRODUCT_COPY_FILES += \
     system/core/libprocessgroup/profiles/cgroups_30.json:$(TARGET_COPY_OUT_VENDOR)/etc/cgroups.json \
-    system/core/libprocessgroup/profiles/task_profiles_30.json:$(TARGET_COPY_OUT_VENDOR)/etc/task_profiles.json
+    $(LOCAL_PATH)/configs/task_profiles.json:$(TARGET_COPY_OUT_VENDOR)/etc/task_profiles.json
 
 # Display
 PRODUCT_PACKAGES += \
@@ -279,6 +280,7 @@ PRODUCT_PACKAGES += \
     CarrierConfigOverlay \
     DozeOverlaySystem \
     DozeOverlaySystemUI \
+    SystemUIOverlayPlatform \
     OplusDozeOverlay \
     OPlusSettingsResTarget
 
@@ -434,15 +436,16 @@ PRODUCT_PACKAGES += \
 
 # VNDK
 PRODUCT_PACKAGES += \
-    libutils-v32
+    prebuilts/vndk/v32/arm64/arch-arm-armv8-a/shared/vndk-sp/libutils.so:$(TARGET_COPY_OUT_VENDOR)/lib/libutils-v32.so \
+    prebuilts/vndk/v33/arm64/arch-arm-armv8-a/shared/vndk-core/libstagefright_foundation.so:$(TARGET_COPY_OUT_VENDOR)/lib/libstagefright_foundation-v33.so
 
 PRODUCT_COPY_FILES += \
-    prebuilts/vndk/v33/arm64/arch-arm-armv8-a/shared/vndk-core/libstagefright_foundation.so:$(TARGET_COPY_OUT_VENDOR)/lib/libstagefright_foundation-v33.so \
+    prebuilts/vndk/v32/arm64/arch-arm64-armv8-a/shared/vndk-sp/libutils.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libutils-v32.so \
     prebuilts/vndk/v33/arm64/arch-arm64-armv8-a/shared/vndk-core/libstagefright_foundation.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libstagefright_foundation-v33.so
 
 # Wi-Fi
 PRODUCT_PACKAGES += \
-    android.hardware.wifi-service \
+    android.hardware.wifi-service-lazy \
     wpa_supplicant \
     libwifi-hal-wrapper \
     hostapd

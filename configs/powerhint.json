@@ -217,6 +217,7 @@
         "2"
       ],
       "ResetOnInit": true,
+      "DefaultIndex": 0
     },
     {
       "Name": "FBTBHROPP",
@@ -395,24 +396,6 @@
       "Value": "1"
     },
     {
-      "PowerHint": "AUDIO_STREAMING_LOW_LATENCY",
-      "Node": "PowerHALAudioState",
-      "Duration": 0,
-      "Value": "AUDIO_STREAMING_LOW_LATENCY"
-    },
-    {
-      "PowerHint": "AUDIO_STREAMING_LOW_LATENCY",
-      "Node": "CPULittleClusterMinFreq",
-      "Duration": 0,
-      "Value": "875000"
-    },
-    {
-      "PowerHint": "AUDIO_STREAMING_LOW_LATENCY",
-      "Node": "CPUBigClusterMinFreq",
-      "Duration": 0,
-      "Value": "919000"
-    },
-    {
       "PowerHint": "INTERACTION",
       "Node": "CPULittleClusterMaxFreq",
       "Duration": 0,
@@ -549,12 +532,6 @@
       "Node": "PowerHALRenderingState",
       "Duration": 0,
       "Value": "EXPENSIVE_RENDERING"
-    },
-    {
-      "PowerHint": "EXPENSIVE_RENDERING",
-      "Node": "GPUSchedPeriod",
-      "Duration": 0,
-      "Value": "100"
     },
     {
       "PowerHint": "EXPENSIVE_RENDERING",

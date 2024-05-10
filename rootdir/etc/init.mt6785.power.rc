@@ -47,6 +47,8 @@ on init
     chown system system /dev/stune/camera-daemon
     chown system system /dev/stune/camera-daemon/tasks
     chmod 0664 /dev/stune/camera-daemon/tasks
+    write /dev/stune/camera-daemon/schedtune.prefer_idle 0
+    write /dev/stune/camera-daemon/schedtune.boost 0
 
     # create io boost group
     mkdir /dev/stune/io
@@ -62,6 +64,16 @@ on init
     write /sys/block/mmcblk0/queue/nr_requests 256
     write /sys/block/sdc/queue/iostats 0
     write /sys/block/sdc/queue/nr_requests 256
+
+    # Configure governor settings for little cluster
+    write /sys/devices/system/cpu/cpufreq/policy0/scaling_governor "schedutil"
+
+    # Configure governor settings for big cluster
+    write /sys/devices/system/cpu/cpufreq/policy6/scaling_governor "schedutil"
+
+    # Set rate limits for clusters
+    write /sys/devices/system/cpu/cpufreq/schedutil/up_rate_limit_us 500
+    write /sys/devices/system/cpu/cpufreq/schedutil/down_rate_limit_us 20000
 
     # update cpus for cpuset cgroup
     write /dev/cpuset/foreground/cpus 0-2,4-7
@@ -80,8 +92,6 @@ on enable-low-power
     # Enable UFS powersaving
     write /sys/devices/platform/bootdevice/clkgate_enable 1
 
-    write /proc/cpufreq/cpufreq_sched_disable 0
-
     # Runtime FS tuning
     # we should adjust the setting upon boot_complete for runtime performance
     write /sys/block/mmcblk0/queue/iostats 1
@@ -96,6 +106,8 @@ on enable-low-power
     write /sys/block/dm-3/queue/read_ahead_kb 128
     write /sys/block/dm-4/queue/read_ahead_kb 128
     write /sys/block/dm-5/queue/read_ahead_kb 128
+
+    write /proc/cpufreq/cpufreq_sched_disable 0
     write /proc/sys/kernel/sched_migration_cost_ns 200000
 
     # Enable PowerHAL hint processing
